@@ -33,6 +33,6 @@ def echo_progress(message):
         if len(lines) > 20:
             message.send('Progress is here.\n```' + ''.join(lines[-20:]) + '```')
         else:
-            message.send('Progress is here.\n```' + lines + '```')
+            message.send('Progress is here.\n```' + ''.join(lines) + '```')
     except FileNotFoundError:
         message.send('File not found...')

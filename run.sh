@@ -1,7 +1,8 @@
 #!/bin/bash
 # $? : exit code of the last command
 
-python $1
+curl -X POST --data-urlencode "payload={\"channel\": \"#notice\", \"username\": \"Start!\", \"text\": \"学習開始！ [ $1 ]\", \"icon_emoji\": \":simple_smile:\"}" $SLACK_WEBHOOK
+python -u $1
 exit_code=$?
 
 if [ $exit_code = 0 ]; then
